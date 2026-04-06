@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PT. Adikara Mandala Kreasi (AMK) | Ethereal Architect of Digital Innovation</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#d6fff1",
+                        "primary": "#dbfcff",
+                        "surface-tint": "#00dbe9",
+                        "on-primary-fixed-variant": "#004f54",
+                        "surface": "#041329",
+                        "on-background": "#d6e3ff",
+                        "primary-container": "#00f0ff",
+                        "tertiary-container": "#54f2ce",
+                        "secondary": "#c6c6c6",
+                        "primary-fixed": "#7df4ff",
+                        "surface-bright": "#2c3951",
+                        "outline": "#849495",
+                        "surface-container-low": "#0d1c32",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-secondary": "#2f3131",
+                        "inverse-surface": "#d6e3ff",
+                        "surface-container-highest": "#27354c",
+                        "outline-variant": "#3b494b",
+                        "surface-dim": "#041329",
+                        "surface-container": "#112036",
+                        "on-tertiary-fixed-variant": "#005142",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-surface-variant": "#b9cacb",
+                        "on-secondary-container": "#b8b8b8",
+                        "secondary-container": "#484949",
+                        "on-primary-fixed": "#002022",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary": "#00363a",
+                        "error": "#ffb4ab",
+                        "background": "#041329",
+                        "tertiary-fixed": "#5ffbd6",
+                        "inverse-on-surface": "#233148",
+                        "on-tertiary": "#00382d",
+                        "surface-variant": "#27354c",
+                        "surface-container-high": "#1c2a41",
+                        "on-surface": "#d6e3ff",
+                        "primary-fixed-dim": "#00dbe9",
+                        "on-primary-container": "#006970",
+                        "tertiary-fixed-dim": "#38debb",
+                        "on-tertiary-container": "#006c58",
+                        "inverse-primary": "#006970",
+                        "surface-container-lowest": "#010e24",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-tertiary-fixed": "#002019"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .glass-nav { background: rgba(4, 19, 41, 0.6); backdrop-filter: blur(30px); }
+        .hero-gradient { background: linear-gradient(135deg, #dbfcff 0%, #00f0ff 100%); }
+        
+        .marquee { display: flex; overflow: hidden; user-select: none; gap: 4rem; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+        .marquee-content { flex-shrink: 0; display: flex; justify-content: space-around; min-width: 100%; gap: 4rem; animation: scroll 30s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+        
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Advanced Cinematic Reveals */
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 1.2s cubic-bezier(0.21, 1.02, 0.49, 1), transform 1.2s cubic-bezier(0.21, 1.02, 0.49, 1); will-change: transform, opacity; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        .reveal-scale { opacity: 0; transform: scale(0.95); transition: opacity 1s cubic-bezier(0.21, 1.02, 0.49, 1), transform 1s cubic-bezier(0.21, 1.02, 0.49, 1); }
+        .reveal-scale.active { opacity: 1; transform: scale(1); }
+
+        .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 1s cubic-bezier(0.21, 1.02, 0.49, 1), transform 1s cubic-bezier(0.21, 1.02, 0.49, 1); }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
+
+        .reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 1s cubic-bezier(0.21, 1.02, 0.49, 1), transform 1s cubic-bezier(0.21, 1.02, 0.49, 1); }
+        .reveal-right.active { opacity: 1; transform: translateX(0); }
+
+        .hover-lift { transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease; }
+        .hover-lift:hover { transform: translateY(-12px); }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px -5px rgba(0, 240, 255, 0.4); }
+            50% { box-shadow: 0 0 40px 0px rgba(0, 240, 255, 0.6); }
+        }
+        .btn-pulse { animation: pulse-glow 3s ease-in-out infinite; }
+        
+        .magnetic-btn { position: relative; transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1); }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        @keyframes shine {
+            0% { transform: translateX(-200%) skewX(-30deg); }
+            100% { transform: translateX(200%) skewX(-30deg); }
+        }
+        .shine-sweep { position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent); animation: shine 3s infinite; }
+        
+        @keyframes fluid-gradient {
+            0%, 100% { opacity: 0.5; transform: scale(1) translate(0, 0); }
+            50% { opacity: 0.8; transform: scale(1.1) translate(2%, 2%); }
+        }
+        .animate-fluid { animation: fluid-gradient 15s ease-in-out infinite; }
+
+        .stagger-item { opacity: 0; transform: translateY(20px); }
+        .active .stagger-item { animation: reveal-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+        .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes reveal-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #back-to-top {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.8);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-[#3b494b]/10 bg-[#041329]/60 backdrop-blur-[30px]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#dbfcff] font-headline">
+<img alt="AMK Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhT-P0XYk02ACKF0gXMxVW3DJpiYsvho7ncNMFfoB83KQUX22jH-l58vV8wXnfrt166Iz2moFM_A9g2GUXv_cqKo_GEHsBTDfRtXdLx3qHh7c2wifw1ohyNPWFeex9qe4t_nh5tIC0YV_JLfXYfdGU4d7x3_OlvL0JRJlej9gA8kpBlmHoL8slizvf44uHwq0O_3o6tBrkdgrC6hkSIXohIYuLy26hWmaLjV8_ZSGdmunLnE9CVl8HX2rOIhS_3vKl90eE9_yJOjuQ"/>
+</div>
+<div class="hidden md:flex space-x-8">
+<a class="font-headline tracking-[-0.04em] font-bold text-[#b9cacb] hover:text-[#dbfcff] transition-all duration-500 ease-in-out" href="#home">Home</a>
+<a class="font-headline tracking-[-0.04em] font-bold text-[#b9cacb] hover:text-[#dbfcff] transition-all duration-500 ease-in-out" href="#about">About</a>
+<a class="font-headline tracking-[-0.04em] font-bold text-[#b9cacb] hover:text-[#dbfcff] transition-all duration-500 ease-in-out" href="#services">Services</a>
+<a class="font-headline tracking-[-0.04em] font-bold text-[#b9cacb] hover:text-[#dbfcff] transition-all duration-500 ease-in-out" href="#leadership">Leadership</a>
+<a class="font-headline tracking-[-0.04em] font-bold text-[#b9cacb] hover:text-[#dbfcff] transition-all duration-500 ease-in-out" href="#portfolio">Portfolio</a>
+<a class="font-headline tracking-[-0.04em] font-bold text-[#b9cacb] hover:text-[#dbfcff] transition-all duration-500 ease-in-out" href="#contact">Contact</a>
+</div>
+<a class="hidden md:block font-headline tracking-[-0.04em] font-bold text-primary px-6 py-2 border border-primary/20 rounded-full hover:bg-primary/10 transition-all duration-500 ease-in-out" href="#contact">
+            Mulai Kolaborasi
+        </a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden" id="home">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.08),transparent_70%)] animate-fluid"></div>
+<div class="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-surface to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-8 reveal-left active">
+<div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-outline-variant/30 bg-surface-container-low/50">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-medium tracking-widest uppercase text-on-surface-variant">Creative Digital Agency • Bogor</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-headline font-bold tracking-[-0.04em] text-primary leading-[0.9] flex flex-col">
+<span>Collaboration</span>
+<span>Meets</span>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Innovation</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed font-body">
+                Digital Creative Agency inovatif di Bogor sebagai One-Stop Solution untuk estetika visual, produksi video sinematik, dan strategi pemasaran berbasis data.
+            </p>
+<div class="flex items-center space-x-6 pt-4">
+<a class="magnetic-btn btn-pulse px-8 py-4 hero-gradient text-on-primary font-headline font-extrabold text-lg rounded-xl hover:scale-105 transition-all duration-300 relative overflow-hidden flex items-center justify-center" href="#contact" id="cta-magnetic">
+<div class="shine-sweep"></div>
+<span class="relative z-10">Mulai Kolaborasi</span>
+</a>
+<a class="group flex items-center space-x-3 text-primary font-headline font-bold" href="#services">
+<span>Explore Services</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="hidden lg:block relative reveal-right active">
+<div class="aspect-square rounded-full border border-primary/10 absolute -inset-10 animate-[spin_20s_linear_infinite]"></div>
+<div class="aspect-square rounded-full border border-primary/5 absolute -inset-20 animate-[spin_35s_linear_infinite_reverse]"></div>
+<img alt="Hero Visual" class="relative z-10 rounded-[2rem] shadow-2xl shadow-primary/10 border border-outline-variant/20 object-cover w-full h-[600px] animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmNbiqSXpEVQgMYCzKBsowBVf3TFZrl2o1caTO9mCu08-cbbR2s7vtmdGZQKYDz0PlBsFh_5zahx3PXLGSWiW5WUPVdmjpFI5o0KGwBk09KIsNFzhugsZpZykoq0IcYtZtPqxDLOI6vO_42o0Pn8emYFk7XGMsi4xFdkQqeTo3YbG94ZwS5jlV5xwHpIlIoUf1pJqq3Cj5XnN_dS_XbPu6bEeJY0PTuVzVRO9ia3VJwDjiFhH418_6EkGWVhQya82zTKBMtQqUYcx3"/>
+</div>
+</div>
+</section>
+<!-- About Us -->
+<section class="py-24 bg-surface-container-lowest relative reveal" id="about">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-start">
+<div class="space-y-8 reveal-left">
+<h2 class="text-4xl font-headline font-bold text-primary">The Architects of Experience</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                    PT. Adikara Mandala Kreasi (AMK) lahir dari visi untuk menyatukan presisi teknis dengan estetika yang tak terbatas. Kami bukan sekadar agensi; kami adalah mitra strategis yang menerjemahkan ambisi bisnis Anda menjadi realitas digital yang memukau.
+                </p>
+<a class="inline-flex items-center space-x-2 text-primary font-headline font-bold hover:underline group" href="#portfolio">
+<span>Learn More About Us</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+<div class="p-8 bg-surface rounded-2xl border border-outline-variant/10 space-y-4">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Nomor Induk Berusaha</p>
+<p class="text-xl font-bold font-headline text-primary">NIB: 2407250043491</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Headquarters</p>
+<p class="text-lg font-medium text-on-surface">Jl. Ring Road Jl. Raya Bubulak No.A-4, Kota Bogor.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 h-full reveal-right">
+<div class="space-y-4 mt-8">
+<img alt="Office" class="rounded-2xl h-64 w-full object-cover grayscale hover:grayscale-0 transition-all duration-500 reveal-scale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwAoJASmD4cCQhBGNg5SLQ_Pktl_EdMwV2SPvKwC8ntFFy7oozYlI4aPfbL8KXVSXUQlUNLXyAqJkTenDmqS4kl4j0eL741xGpSIgpnHFerAf3-X-q6Xm8ZWSKrQ9o-iIMmiujryZSw2trXFXbzYNX_5bv4sn8b_Qq8siQC_U2ZJdyaS7ezJLWstelgb-o5WzkLs2c4tepgIoODsUNA4pXaHaaJfJNueXIDwVaj9wM6oTSikzxzds2e--csaEyJIANrpKjmvn8xeTX"/>
+<div class="bg-primary-container/10 p-6 rounded-2xl border border-primary/20 reveal-scale">
+<p class="text-4xl font-bold text-primary font-headline">100+</p>
+<p class="text-sm text-on-surface-variant">Projects Delivered</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-highest p-6 rounded-2xl reveal-scale">
+<p class="text-4xl font-bold text-primary font-headline">2026</p>
+<p class="text-sm text-on-surface-variant">Future Ready</p>
+</div>
+<img alt="Team Work" class="rounded-2xl h-80 w-full object-cover grayscale hover:grayscale-0 transition-all duration-500 reveal-scale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAktsFxcpWzJj_dOjxDWbQBSCprku4NflUGmcrP8olJH5SvN-2SiE9genQRtB6TyDPbscLUd6t9mbqDDqQbe_i3FGNKlz8_p5qzzCY4luavHXGwTurX_T87pEzzV3es9ovyPsKiStCo_XSLBqIoAzhrPyWZOxXJySEBKVW0ogWPc_bEwpYEtTYrG_Nu84mrlot_uNcXk5XuqoPWMNhZesyUY32iitls4NIzU9vb4xaJs1GN-BFiuQ5SAgW5SHEpONtGKDHGJgTR1LtG"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Pillars (Services) -->
+<section class="py-24" id="services">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16 space-y-4 reveal">
+<h2 class="text-5xl font-headline font-bold text-primary tracking-tight">Core Pillars</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Kami menyediakan ekosistem terpadu untuk segala kebutuhan transformasi digital Anda.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Service 1 -->
+<div class="reveal stagger-item group p-8 bg-surface-container-low rounded-3xl hover:bg-surface-container-highest transition-all duration-300 border border-outline-variant/5 hover-lift flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-5xl mb-6 block group-hover:scale-110 transition-transform">movie</span>
+<h3 class="text-2xl font-headline font-bold text-primary mb-4">Cinematic Visuals</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Video korporat, TVC, dan drone footage berkualitas sinema untuk narasi brand yang kuat.</p>
+</div>
+<a class="text-primary font-headline font-bold flex items-center space-x-2 group-hover:text-primary-container transition-colors" href="#">
+<span>View Details</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<!-- Service 2 -->
+<div class="reveal stagger-item group p-8 bg-surface-container-low rounded-3xl hover:bg-surface-container-highest transition-all duration-300 border border-outline-variant/5 hover-lift flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-5xl mb-6 block group-hover:scale-110 transition-transform">mic_external_on</span>
+<h3 class="text-2xl font-headline font-bold text-primary mb-4">Pro Audio</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Produksi Podcast/Vodcast dan Sonic Branding untuk identitas suara yang tak terlupakan.</p>
+</div>
+<a class="text-primary font-headline font-bold flex items-center space-x-2 group-hover:text-primary-container transition-colors" href="#">
+<span>View Details</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<!-- Service 3 -->
+<div class="reveal stagger-item group p-8 bg-surface-container-low rounded-3xl hover:bg-surface-container-highest transition-all duration-300 border border-outline-variant/5 hover-lift flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-5xl mb-6 block group-hover:scale-110 transition-transform">query_stats</span>
+<h3 class="text-2xl font-headline font-bold text-primary mb-4">Data-Driven Marketing</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Strategi Ads, SEO, dan Social Media Management berbasis intelijen pasar yang akurat.</p>
+</div>
+<a class="text-primary font-headline font-bold flex items-center space-x-2 group-hover:text-primary-container transition-colors" href="#">
+<span>View Details</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- The AMK Advantage -->
+<section class="py-32 bg-surface overflow-hidden relative" id="advantage">
+<div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
+<div class="relative reveal-left">
+<div class="absolute -inset-4 bg-primary/20 blur-3xl opacity-20 animate-pulse"></div>
+<img alt="Tech Visual" class="relative z-10 rounded-3xl shadow-[0_0_50px_rgba(0,240,255,0.15)] border border-primary/20 rotate-1 scale-105 hover:rotate-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5vDHW7Lr04GcpmQkpcGXdxyN51vTc4rSX2mAKSztS1g9dHVEF6ZfcvJ4055CXiNKyfPNrdOQ8pX7T4wRktyLjgMHLT9WA_JxweQLLtGhnMKTk9pv8j6odkebIfCfhc8iIBn6XpDPVnZdgUXG5hjbwk67w303hRDxhIHrlnRgTvi3QIxTKTd1G2d52Wav1irsCyl_jITAJcR8baEmevORIuNhJFpyoMNPOJZQuQum75EbbdyJxj78qQI5q209NoKsvxiHrvDzbPBwk"/>
+<div class="absolute -bottom-10 -right-10 bg-surface-container-highest p-8 rounded-2xl border border-primary/30 shadow-2xl z-20 reveal-scale">
+<span class="text-primary font-headline font-bold text-2xl">Innovation First</span>
+</div>
+</div>
+<div class="space-y-12 reveal-right">
+<div class="space-y-4">
+<h2 class="text-5xl font-headline font-bold text-primary">The AMK Advantage</h2>
+<p class="text-on-surface-variant text-lg">Keunggulan kompetitif yang mendefinisikan setiap langkah strategis kami.</p>
+</div>
+<div class="grid gap-8 reveal">
+<div class="stagger-item flex items-start space-x-6 p-6 rounded-2xl bg-surface-container-low/50 border border-outline-variant/10 hover:border-primary/30 transition-all">
+<div class="mt-1 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl">target</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xl text-primary mb-2">Precision Execution</h4>
+<p class="text-on-surface-variant">Detail yang sempurna dalam setiap piksel dan frame yang kami hasilkan untuk output kelas dunia.</p>
+</div>
+</div>
+<div class="stagger-item flex items-start space-x-6 p-6 rounded-2xl bg-surface-container-low/50 border border-outline-variant/10 hover:border-primary/30 transition-all">
+<div class="mt-1 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xl text-primary mb-2">Predictive Creativity</h4>
+<p class="text-on-surface-variant">Menggunakan data intelijen untuk memprediksi tren masa depan sebelum kompetitor Anda menyadarinya.</p>
+</div>
+</div>
+<div class="stagger-item flex items-start space-x-6 p-6 rounded-2xl bg-surface-container-low/50 border border-outline-variant/10 hover:border-primary/30 transition-all">
+<div class="mt-1 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl">hub</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xl text-primary mb-2">Seamless Ecosystem</h4>
+<p class="text-on-surface-variant">Integrasi tanpa hambatan antara produksi kreatif tingkat tinggi dan strategi distribusi digital.</p>
+</div>
+</div>
+<div class="stagger-item flex items-start space-x-6 p-6 rounded-2xl bg-surface-container-low/50 border border-outline-variant/10 hover:border-primary/30 transition-all">
+<div class="mt-1 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xl text-primary mb-2">Optimized Investment</h4>
+<p class="text-on-surface-variant">Memastikan setiap rupiah anggaran pemasaran Anda menghasilkan ROI yang maksimal secara berkelanjutan.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Teaser Section -->
+<section class="py-24 bg-surface-container-low reveal" id="portfolio">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal">
+<div class="space-y-4">
+<h2 class="text-5xl font-headline font-bold text-primary tracking-tight">Recent Manifestations</h2>
+<p class="text-on-surface-variant max-w-xl">Intip beberapa karya terpilih yang mendefinisikan standar keunggulan kami.</p>
+</div>
+<a class="px-8 py-3 border border-primary/30 text-primary font-headline font-bold rounded-xl hover:bg-primary/10 transition-all flex items-center space-x-2" href="#">
+<span>View Full Portfolio</span>
+<span class="material-symbols-outlined">collections</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="reveal-scale group relative overflow-hidden rounded-2xl aspect-video bg-surface-bright shadow-lg">
+<img alt="Project 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmNbiqSXpEVQgMYCzKBsowBVf3TFZrl2o1caTO9mCu08-cbbR2s7vtmdGZQKYDz0PlBsFh_5zahx3PXLGSWiW5WUPVdmjpFI5o0KGwBk09KIsNFzhugsZpZykoq0IcYtZtPqxDLOI6vO_42o0Pn8emYFk7XGMsi4xFdkQqeTo3YbG94ZwS5jlV5xwHpIlIoUf1pJqq3Cj5XnN_dS_XbPu6bEeJY0PTuVzVRO9ia3VJwDjiFhH418_6EkGWVhQya82zTKBMtQqUYcx3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<div>
+<p class="text-xs text-primary font-bold uppercase tracking-widest">Cinematic Visuals</p>
+<h4 class="text-lg font-headline font-bold text-white">Nippon Express Global</h4>
+</div>
+</div>
+</div>
+<div class="reveal-scale group relative overflow-hidden rounded-2xl aspect-video bg-surface-bright shadow-lg" style="transition-delay: 0.2s;">
+<img alt="Project 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwAoJASmD4cCQhBGNg5SLQ_Pktl_EdMwV2SPvKwC8ntFFy7oozYlI4aPfbL8KXVSXUQlUNLXyAqJkTenDmqS4kl4j0eL741xGpSIgpnHFerAf3-X-q6Xm8ZWSKrQ9o-iIMmiujryZSw2trXFXbzYNX_5bv4sn8b_Qq8siQC_U2ZJdyaS7ezJLWstelgb-o5WzkLs2c4tepgIoODsUNA4pXaHaaJfJNueXIDwVaj9wM6oTSikzxzds2e--csaEyJIANrpKjmvn8xeTX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<div>
+<p class="text-xs text-primary font-bold uppercase tracking-widest">Brand Experience</p>
+<h4 class="text-lg font-headline font-bold text-white">Aston Bogor Hybrid Event</h4>
+</div>
+</div>
+</div>
+<div class="reveal-scale group relative overflow-hidden rounded-2xl aspect-video bg-surface-bright shadow-lg" style="transition-delay: 0.4s;">
+<img alt="Project 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5vDHW7Lr04GcpmQkpcGXdxyN51vTc4rSX2mAKSztS1g9dHVEF6ZfcvJ4055CXiNKyfPNrdOQ8pX7T4wRktyLjgMHLT9WA_JxweQLLtGhnMKTk9pv8j6odkebIfCfhc8iIBn6XpDPVnZdgUXG5hjbwk67w303hRDxhIHrlnRgTvi3QIxTKTd1G2d52Wav1irsCyl_jITAJcR8baEmevORIuNhJFpyoMNPOJZQuQum75EbbdyJxj78qQI5q209NoKsvxiHrvDzbPBwk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<div>
+<p class="text-xs text-primary font-bold uppercase tracking-widest">Digital Strategy</p>
+<h4 class="text-lg font-headline font-bold text-white">JICA Innovation Hub</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Team -->
+<section class="py-24" id="leadership">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16 reveal">
+<h2 class="text-5xl font-headline font-bold text-primary mb-4">Visionary Minds</h2>
+<p class="text-on-surface-variant">Pemimpin di balik inovasi PT. Adikara Mandala Kreasi.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Leader 1 -->
+<div class="reveal-scale group relative overflow-hidden rounded-3xl bg-surface-container text-center pb-8 border border-outline-variant/10 hover-lift">
+<div class="aspect-[3/4] overflow-hidden mb-6">
+<img alt="Rizqi Maulana" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRv8qo-WlD1eDmKfb7HZUXiAnaQJKx89oSxjcJWbUDH7DOiAwYQAvAWvzWHWc8VN8_LH5AWj6LAQDXY7PTAaozcFMqUUD2BGqRFqvZqxp5oR8SfXKxeN7mgTQcF9OKxQ3a9rm5GRpx3cym-622hiNUqvodUeRs7JdAfMha2_mGBcfPrGPM1-vrAwylNrnF2QUHBiaUng6P5kEAXcKeYFKjLt7D7GyyfVf7mLjSC7TiNwFZkC2tmbXOqX3QUo7AlVMIKPb7lr8Pcq96"/>
+</div>
+<h3 class="text-2xl font-headline font-bold text-primary">Rizqi Maulana</h3>
+<p class="text-on-surface-variant font-medium">Leading Director</p>
+</div>
+<!-- Leader 2 -->
+<div class="reveal-scale group relative overflow-hidden rounded-3xl bg-surface-container text-center pb-8 border border-outline-variant/10 hover-lift" style="transition-delay: 0.2s;">
+<div class="aspect-[3/4] overflow-hidden mb-6">
+<img alt="Meida Pitaloka" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlrBzgWIU5KLXfY7II6ulyPX_KeNdmSAchKkC031bOTaY9y0csy2F8kqKwNrB8xxily82TgjXQcVf-3Z1DQdVIeb8pKn0yQqD_gO6Qz6q9v15SCTjXQIBwyag6vrjLiCdiBKP5pwcYjaofiSbE1_8vdxmwgLJRFKG7b7RGbBFD0xbUYENFcfzQ1xEZR_cVUe2L4usxkydlDEguEswrBuRDXGnss6HIdGljEFFmnlG4m66YF0fVIlkpI4MfsltfaTDMf620bfOaw61r"/>
+</div>
+<h3 class="text-2xl font-headline font-bold text-primary">Meida Pitaloka</h3>
+<p class="text-on-surface-variant font-medium">Commissioner</p>
+</div>
+<!-- Leader 3 -->
+<div class="reveal-scale group relative overflow-hidden rounded-3xl bg-surface-container text-center pb-8 border border-outline-variant/10 hover-lift" style="transition-delay: 0.4s;">
+<div class="aspect-[3/4] overflow-hidden mb-6">
+<img alt="Luthfi Hafiz" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMlPbT8kTeC0GkV2ZPBDHV6iLOAWs_XmCow9-b9BWd_uai1myjMCv2ASs-i-hJz1qKErLeB7jTDRmoYF1Jdsfz_o4v1EaopQCuCwwkNSpxsiQWHfyMGCfTiSPYvEEvwY1eihhpczf5Wg9dUdMCkuvKrv8GrfwyFN8ZKJI-Ws8J5rNfuCqBrGElc6LzFAW1L3kPqEUtk46k4yU2-nj-F6sVhm_xbpXDL2u1IYSZbN6LMjSSJhBVjJ5zQuOY-B6ZRsjV8twhOfjHim3S"/>
+</div>
+<h3 class="text-2xl font-headline font-bold text-primary">Luthfi Hafiz</h3>
+<p class="text-on-surface-variant font-medium">Head of Operations</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Clients -->
+<section class="py-24 bg-surface-container-lowest reveal" id="clients">
+<div class="max-w-7xl mx-auto px-8 mb-12">
+<h2 class="text-center text-3xl font-headline font-bold text-primary opacity-60">Trusted By Industry Giants</h2>
+</div>
+<div class="marquee py-12">
+<div class="marquee-content">
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">Nippon Express</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">JICA</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">Aston Bogor</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">Balairung Hotel</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">DPRD Kota Bogor</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">PKS</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">Walikota Bogor 2024</span>
+</div>
+<div aria-hidden="true" class="marquee-content">
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">Nippon Express</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">JICA</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">Aston Bogor</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">Balairung Hotel</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">DPRD Kota Bogor</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">PKS</span>
+<span class="text-3xl font-headline font-bold text-on-surface-variant hover:text-primary transition-colors">Walikota Bogor 2024</span>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#010e24] w-full py-12 px-8" id="contact">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto font-['Inter'] text-sm text-[#b9cacb]">
+<div class="space-y-6 reveal-left">
+<div class="text-xl font-bold text-[#dbfcff] font-headline">
+<img alt="AMK Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhT-P0XYk02ACKF0gXMxVW3DJpiYsvho7ncNMFfoB83KQUX22jH-l58vV8wXnfrt166Iz2moFM_A9g2GUXv_cqKo_GEHsBTDfRtXdLx3qHh7c2wifw1ohyNPWFeex9qe4t_nh5tIC0YV_JLfXYfdGU4d7x3_OlvL0JRJlej9gA8kpBlmHoL8slizvf44uHwq0O_3o6tBrkdgrC6hkSIXohIYuLy26hWmaLjV8_ZSGdmunLnE9CVl8HX2rOIhS_3vKl90eE9_yJOjuQ"/>
+</div>
+<p class="leading-relaxed">Transformasi digital melalui kreativitas berbasis data. Kami hadir di Bogor untuk jangkauan global.</p>
+<div class="flex flex-wrap gap-4">
+<a class="hover:text-[#dbfcff] transition-opacity" href="#about">About Us</a>
+<a class="hover:text-[#dbfcff] transition-opacity" href="#services">Services</a>
+<a class="hover:text-[#dbfcff] transition-opacity" href="#portfolio">Portfolio</a>
+<a class="hover:text-[#dbfcff] transition-opacity" href="#">Instagram</a>
+<a class="hover:text-[#dbfcff] transition-opacity" href="#">LinkedIn</a>
+</div>
+</div>
+<div class="space-y-6 reveal">
+<h4 class="text-[#00f0ff] font-bold font-headline uppercase tracking-widest text-xs">Direct Contact</h4>
+<div class="space-y-4">
+<a class="block hover:text-[#dbfcff] transition-opacity" href="https://wa.me/6285155336838">WhatsApp: 0851 5533 6838</a>
+<a class="block hover:text-[#dbfcff] transition-opacity" href="mailto:adikaramandalakreasi@gmail.com">Email: adikaramandalakreasi@gmail.com</a>
+</div>
+</div>
+<div class="space-y-6 reveal-right">
+<h4 class="text-[#00f0ff] font-bold font-headline uppercase tracking-widest text-xs">Ready to innovate?</h4>
+<a class="magnetic-btn inline-block px-8 py-4 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-transform" href="https://wa.me/6285155336838">
+                Start a Conversation
+            </a>
+<p class="pt-8">Copyright © 2026 PT. Adikara Mandala Kreasi</p>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button class="fixed bottom-10 right-10 z-[100] w-14 h-14 bg-primary text-surface rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group" id="back-to-top">
+<span class="material-symbols-outlined font-bold group-hover:-translate-y-1 transition-transform">arrow_upward</span>
+</button>
+<script>
+    // Smooth Reveal Observer
+    const observerOptions = {
+        root: null,
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Optional: stop observing once triggered
+                // revealObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach((el) => revealObserver.observe(el));
+
+    // Magnetic Button Effect
+    const magneticBtns = document.querySelectorAll('.magnetic-btn');
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', function(e) {
+            const position = btn.getBoundingClientRect();
+            const x = (e.clientX - position.left - position.width / 2) * 0.4;
+            const y = (e.clientY - position.top - position.height / 2) * 0.4;
+            btn.style.transform = `translate(${x}px, ${y}px)`;
+        });
+        btn.addEventListener('mouseleave', function() {
+            btn.style.transform = 'translate(0px, 0px)';
+        });
+    });
+
+    // Back to Top Logic
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Advanced Smooth Scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const navHeight = 80;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body></html>
